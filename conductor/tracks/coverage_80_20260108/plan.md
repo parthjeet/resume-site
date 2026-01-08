@@ -32,7 +32,7 @@
 - [x] Task: Conductor - User Manual Verification 'Phase 3: Core Component Testing' (Protocol in workflow.md)
 
 ## Phase 4: Screen Component Testing
-- [~] Task: Implement tests for `src/components/screens/AboutScreen.tsx`.
+- [x] Task: Implement tests for `src/components/screens/AboutScreen.tsx`. [commit: cd5badd]
 - [ ] Task: Implement tests for `src/components/screens/ExperienceScreen.tsx`.
 - [ ] Task: Implement tests for `src/components/screens/SkillsScreen.tsx`.
 - [ ] Task: Implement tests for `src/components/screens/ProjectsScreen.tsx`.
