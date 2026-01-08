@@ -15,7 +15,7 @@
 - [x] Task: Implement tests for `src/hooks/useScreenNavigation.ts`. [commit: f86318b]
     - [ ] Subtask: Test navigation state transitions.
     - [ ] Subtask: Test screen ID validation.
-- [ ] Task: Implement tests for `src/hooks/use-mobile.tsx`.
+- [x] Task: Implement tests for `src/hooks/use-mobile.tsx`. [commit: 1a90142]
     - [ ] Subtask: Test mobile detection logic (mocking window.matchMedia).
 - [ ] Task: Implement tests for `src/hooks/use-toast.ts`.
     - [ ] Subtask: Test toast notification state management.
