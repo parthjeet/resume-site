@@ -1386,14 +1386,35 @@ Custom font sizes defined in `tailwind.config.ts`:
 
 ### 7.1 Testing Strategy
 
-Currently, the project focuses on **manual testing** and **code quality checks**. Future testing may include:
+The project uses **Vitest** for unit testing with **React Testing Library** for component testing.
 
-- **Unit Testing**: Test individual functions and utilities
-- **Component Testing**: Test React components in isolation
-- **Integration Testing**: Test component interactions
-- **E2E Testing**: Test user workflows
+**Test Commands:**
 
-**Current Testing Approach:**
+```bash
+# Run tests in watch mode (development)
+npm run test
+
+# Run tests once (CI mode)
+npm run test:run
+
+# Run tests with coverage report
+npm run test:coverage
+```
+
+**Coverage Reports:**
+- Text summary displayed in terminal
+- HTML report at `coverage/index.html`
+- LCOV report at `coverage/lcov.info` (for CI/CD integration)
+
+**Current Test Coverage:**
+- ✅ `cn()` utility function (7 tests)
+- ✅ Animation variants (13 tests)
+- ✅ `useScreenNavigation` hook (14 tests)
+- ✅ `useIsMobile` hook (5 tests)
+- ✅ Content data structure validation (18 tests)
+- **Total: 57 tests across 5 test files**
+
+**Additional Testing:**
 
 1. **ESLint**: Code quality and style checking
 2. **TypeScript**: Type checking and compile-time errors
@@ -1402,11 +1423,12 @@ Currently, the project focuses on **manual testing** and **code quality checks**
 
 ### 7.2 Unit Testing Approach
 
-While unit tests are not yet implemented, here's the recommended approach:
+The project uses **Vitest** as the test runner with the following setup:
 
-**Tools to Use:**
+**Tools:**
 - **Vitest**: Fast unit test framework (Vite-native)
-- **Testing Library**: React component testing
+- **Testing Library**: React component testing (@testing-library/react)
+- **jest-dom**: Custom matchers for DOM testing
 
 **Example Unit Test Structure:**
 
