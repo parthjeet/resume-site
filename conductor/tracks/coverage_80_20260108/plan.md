@@ -1,0 +1,46 @@
+# Plan: Increase Test Coverage to >80%
+
+## Phase 1: Infrastructure and Utility Testing
+- [ ] Task: Verify and configure Vitest coverage reporting.
+    - [ ] Subtask: Check `vitest.config.ts` for coverage settings (v8 or istanbul).
+    - [ ] Subtask: Ensure a coverage script exists in `package.json` (e.g., `vitest run --coverage`).
+    - [ ] Subtask: Run initial coverage to confirm the baseline.
+- [ ] Task: Implement tests for `src/lib/utils.ts`.
+    - [ ] Subtask: Write unit tests for `cn` and other utility functions.
+- [ ] Task: Implement tests for `src/lib/animations.ts`.
+    - [ ] Subtask: Write unit tests for animation constants or helper functions.
+- [ ] Task: Conductor - User Manual Verification 'Phase 1: Infrastructure and Utility Testing' (Protocol in workflow.md)
+
+## Phase 2: Hook Testing
+- [ ] Task: Implement tests for `src/hooks/useScreenNavigation.ts`.
+    - [ ] Subtask: Test navigation state transitions.
+    - [ ] Subtask: Test screen ID validation.
+- [ ] Task: Implement tests for `src/hooks/use-mobile.tsx`.
+    - [ ] Subtask: Test mobile detection logic (mocking window.matchMedia).
+- [ ] Task: Implement tests for `src/hooks/use-toast.ts`.
+    - [ ] Subtask: Test toast notification state management.
+- [ ] Task: Conductor - User Manual Verification 'Phase 2: Hook Testing' (Protocol in workflow.md)
+
+## Phase 3: Core Component Testing
+- [ ] Task: Implement tests for `src/components/BootSequence.tsx`.
+    - [ ] Subtask: Test rendering and animation completion callbacks.
+- [ ] Task: Implement tests for `src/components/WindowContainer.tsx`.
+    - [ ] Subtask: Test window rendering, title bar, and children projection.
+- [ ] Task: Implement tests for `src/components/Taskbar.tsx`.
+    - [ ] Subtask: Test button rendering and click interactions.
+    - [ ] Subtask: Test active state handling.
+- [ ] Task: Conductor - User Manual Verification 'Phase 3: Core Component Testing' (Protocol in workflow.md)
+
+## Phase 4: Screen Component Testing
+- [ ] Task: Implement tests for `src/components/screens/AboutScreen.tsx`.
+- [ ] Task: Implement tests for `src/components/screens/ExperienceScreen.tsx`.
+- [ ] Task: Implement tests for `src/components/screens/SkillsScreen.tsx`.
+- [ ] Task: Implement tests for `src/components/screens/ProjectsScreen.tsx`.
+- [ ] Task: Implement tests for `src/components/screens/EducationScreen.tsx`.
+- [ ] Task: Conductor - User Manual Verification 'Phase 4: Screen Component Testing' (Protocol in workflow.md)
+
+## Phase 5: UI Component Testing (Sample)
+- [ ] Task: Implement tests for high-usage UI components.
+    - [ ] Subtask: Select top 5 used shadcn/ui components (e.g., Button, Card, Dialog).
+    - [ ] Subtask: Write rendering and interaction tests for them.
+- [ ] Task: Conductor - User Manual Verification 'Phase 5: UI Component Testing (Sample)' (Protocol in workflow.md)
