@@ -12,7 +12,7 @@
 - [ ] Task: Conductor - User Manual Verification 'Phase 1: Infrastructure and Utility Testing' (Protocol in workflow.md)
 
 ## Phase 2: Hook Testing
-- [ ] Task: Implement tests for `src/hooks/useScreenNavigation.ts`.
+- [x] Task: Implement tests for `src/hooks/useScreenNavigation.ts`. [commit: f86318b]
     - [ ] Subtask: Test navigation state transitions.
     - [ ] Subtask: Test screen ID validation.
 - [ ] Task: Implement tests for `src/hooks/use-mobile.tsx`.
