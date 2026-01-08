@@ -24,7 +24,7 @@
 ## Phase 3: Core Component Testing
 - [x] Task: Implement tests for `src/components/BootSequence.tsx`. [commit: 659d12e]
     - [ ] Subtask: Test rendering and animation completion callbacks.
-- [ ] Task: Implement tests for `src/components/WindowContainer.tsx`.
+- [x] Task: Implement tests for `src/components/WindowContainer.tsx`. [commit: 2a8af83]
     - [ ] Subtask: Test window rendering, title bar, and children projection.
 - [ ] Task: Implement tests for `src/components/Taskbar.tsx`.
     - [ ] Subtask: Test button rendering and click interactions.
