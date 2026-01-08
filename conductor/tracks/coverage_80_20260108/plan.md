@@ -33,7 +33,7 @@
 
 ## Phase 4: Screen Component Testing
 - [x] Task: Implement tests for `src/components/screens/AboutScreen.tsx`. [commit: cd5badd]
-- [ ] Task: Implement tests for `src/components/screens/ExperienceScreen.tsx`.
+- [~] Task: Implement tests for `src/components/screens/ExperienceScreen.tsx`.
 - [ ] Task: Implement tests for `src/components/screens/SkillsScreen.tsx`.
 - [ ] Task: Implement tests for `src/components/screens/ProjectsScreen.tsx`.
 - [ ] Task: Implement tests for `src/components/screens/EducationScreen.tsx`.
