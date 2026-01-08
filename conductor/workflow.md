@@ -19,52 +19,81 @@ All tasks follow a strict lifecycle:
 
 2. **Mark In Progress:** Before beginning work, edit `plan.md` and change the task from `[ ]` to `[~]`
 
-3. **Write Failing Tests (Red Phase):**
+3. **Create GitHub Issue:**
+   -   **Step 3.1: Draft Issue:** Create a comprehensive description for the task.
+   -   **Step 3.2: Get Approval:** Present the issue title and body to the user for approval.
+   -   **Step 3.3: Create Issue:** Once approved, use `gh issue create` to create the issue.
+       ```bash
+       gh issue create --title "<Task Title>" --body "<Detailed Description>"
+       ```
+
+4. **Create Feature Branch:**
+   -   Create a new branch for the task using the issue number.
+       ```bash
+       git checkout -b feat/issue-<issue_number>-<short-description>
+       ```
+
+5. **Write Failing Tests (Red Phase):**
    - Create a new test file for the feature or bug fix.
    - Write one or more unit tests that clearly define the expected behavior and acceptance criteria for the task.
    - **CRITICAL:** Run the tests and confirm that they fail as expected. This is the "Red" phase of TDD. Do not proceed until you have failing tests.
 
-4. **Implement to Pass Tests (Green Phase):**
+6. **Implement to Pass Tests (Green Phase):**
    - Write the minimum amount of application code necessary to make the failing tests pass.
    - Run the test suite again and confirm that all tests now pass. This is the "Green" phase.
 
-5. **Refactor (Optional but Recommended):**
+7. **Refactor (Optional but Recommended):**
    - With the safety of passing tests, refactor the implementation code and the test code to improve clarity, remove duplication, and enhance performance without changing the external behavior.
    - Rerun tests to ensure they still pass after refactoring.
 
-6. **Verify Coverage:** Run coverage reports using the project's chosen tools. For example, in a Python project, this might look like:
+8. **Verify Coverage:** Run coverage reports using the project's chosen tools. For example, in a Python project, this might look like:
    ```bash
    pytest --cov=app --cov-report=html
    ```
    Target: >80% coverage for new code. The specific tools and commands will vary by language and framework.
 
-7. **Document Deviations:** If implementation differs from tech stack:
+9. **Document Deviations:** If implementation differs from tech stack:
    - **STOP** implementation
    - Update `tech-stack.md` with new design
    - Add dated note explaining the change
    - Resume implementation
 
-8. **Commit Code Changes:**
-   - Stage all code changes related to the task.
-   - Propose a clear, concise commit message e.g, `feat(ui): Create basic HTML structure for calculator`.
-   - Perform the commit.
+10. **Commit Code Changes:**
+    - Stage all code changes related to the task.
+    - Propose a clear, concise commit message e.g, `feat(ui): Create basic HTML structure for calculator`.
+    - Perform the commit.
 
-9. **Attach Task Summary with Git Notes:**
-   - **Step 9.1: Get Commit Hash:** Obtain the hash of the *just-completed commit* (`git log -1 --format="%H"`).
-   - **Step 9.2: Draft Note Content:** Create a detailed summary for the completed task. This should include the task name, a summary of changes, a list of all created/modified files, and the core "why" for the change.
-   - **Step 9.3: Attach Note:** Use the `git notes` command to attach the summary to the commit.
-     ```bash
-     # The note content from the previous step is passed via the -m flag.
-     git notes add -m "<note content>" <commit_hash>
-     ```
+11. **Create Pull Request:**
+    -   Push the branch to the remote repository.
+    -   Create a Pull Request using `gh pr create`.
+        ```bash
+        gh pr create --title "<PR Title>" --body "<PR Description>"
+        ```
+    -   **Step 11.1: Merge PR:** Once checks pass (or with user approval), merge the PR.
+        ```bash
+        gh pr merge --merge --delete-branch
+        ```
+    -   **Step 11.2: Pull Latest Master:** Switch back to master and pull the changes.
+        ```bash
+        git checkout master && git pull origin master
+        ```
 
-10. **Get and Record Task Commit SHA:**
-    - **Step 10.1: Update Plan:** Read `plan.md`, find the line for the completed task, update its status from `[~]` to `[x]`, and append the first 7 characters of the *just-completed commit's* commit hash.
-    - **Step 10.2: Write Plan:** Write the updated content back to `plan.md`.
+12. **Attach Task Summary with Git Notes:**
+    -   **Step 12.1: Get Commit Hash:** Obtain the hash of the *merge commit* (`git log -1 --format="%H"`).
+    -   **Step 12.2: Draft Note Content:** Create a detailed summary for the completed task. This should include the task name, a summary of changes, a list of all created/modified files, and the core "why" for the change.
+    -   **Step 12.3: Attach Note:** Use the `git notes` command to attach the summary to the commit.
+      ```bash
+      # The note content from the previous step is passed via the -m flag.
+      git notes add -m "<note content>" <commit_hash>
+      ```
 
-11. **Commit Plan Update:**
-    - **Action:** Stage the modified `plan.md` file.
-    - **Action:** Commit this change with a descriptive message (e.g., `conductor(plan): Mark task 'Create user model' as complete`).
+13. **Get and Record Task Commit SHA:**
+    -   **Step 13.1: Update Plan:** Read `plan.md`, find the line for the completed task, update its status from `[~]` to `[x]`, and append the first 7 characters of the *merge commit's* commit hash.
+    -   **Step 13.2: Write Plan:** Write the updated content back to `plan.md`.
+
+14. **Commit Plan Update:**
+    -   **Action:** Stage the modified `plan.md` file.
+    -   **Action:** Commit this change with a descriptive message (e.g., `conductor(plan): Mark task 'Create user model' as complete`).
 
 ### Phase Completion Verification and Checkpointing Protocol
 
