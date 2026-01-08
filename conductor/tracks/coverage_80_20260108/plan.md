@@ -29,7 +29,7 @@
 - [x] Task: Implement tests for `src/components/Taskbar.tsx`. [commit: 71a801c]
     - [ ] Subtask: Test button rendering and click interactions.
     - [ ] Subtask: Test active state handling.
-- [ ] Task: Conductor - User Manual Verification 'Phase 3: Core Component Testing' (Protocol in workflow.md)
+- [~] Task: Conductor - User Manual Verification 'Phase 3: Core Component Testing' (Protocol in workflow.md)
 
 ## Phase 4: Screen Component Testing
 - [ ] Task: Implement tests for `src/components/screens/AboutScreen.tsx`.
