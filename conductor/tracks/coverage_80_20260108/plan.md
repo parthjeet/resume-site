@@ -17,7 +17,7 @@
     - [ ] Subtask: Test screen ID validation.
 - [x] Task: Implement tests for `src/hooks/use-mobile.tsx`. [commit: 1a90142]
     - [ ] Subtask: Test mobile detection logic (mocking window.matchMedia).
-- [ ] Task: Implement tests for `src/hooks/use-toast.ts`.
+- [x] Task: Implement tests for `src/hooks/use-toast.ts`. [commit: f8367c1]
     - [ ] Subtask: Test toast notification state management.
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Hook Testing' (Protocol in workflow.md)
 
