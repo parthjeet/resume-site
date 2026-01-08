@@ -2,5 +2,5 @@ projectKey=myres-site
 serverUrl=http://localhost:9000
 serverVersion=25.12.0.117093
 dashboardUrl=http://localhost:9000/dashboard?id=myres-site
-ceTaskId=060f62dc-9a96-4d92-a365-8d6e9f854ecc
-ceTaskUrl=http://localhost:9000/api/ce/task?id=060f62dc-9a96-4d92-a365-8d6e9f854ecc
+ceTaskId=00f781b5-08d1-45cf-b44a-58118e530d9b
+ceTaskUrl=http://localhost:9000/api/ce/task?id=00f781b5-08d1-45cf-b44a-58118e530d9b

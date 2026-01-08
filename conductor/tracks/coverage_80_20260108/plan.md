@@ -22,7 +22,7 @@
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Hook Testing' (Protocol in workflow.md)
 
 ## Phase 3: Core Component Testing
-- [ ] Task: Implement tests for `src/components/BootSequence.tsx`.
+- [~] Task: Implement tests for `src/components/BootSequence.tsx`.
     - [ ] Subtask: Test rendering and animation completion callbacks.
 - [ ] Task: Implement tests for `src/components/WindowContainer.tsx`.
     - [ ] Subtask: Test window rendering, title bar, and children projection.
