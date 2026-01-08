@@ -21,7 +21,7 @@
     - [ ] Subtask: Test toast notification state management.
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Hook Testing' (Protocol in workflow.md)
 
-## Phase 3: Core Component Testing
+## Phase 3: Core Component Testing [checkpoint: feb6688]
 - [x] Task: Implement tests for `src/components/BootSequence.tsx`. [commit: 659d12e]
     - [ ] Subtask: Test rendering and animation completion callbacks.
 - [x] Task: Implement tests for `src/components/WindowContainer.tsx`. [commit: 2a8af83]
@@ -29,7 +29,7 @@
 - [x] Task: Implement tests for `src/components/Taskbar.tsx`. [commit: 71a801c]
     - [ ] Subtask: Test button rendering and click interactions.
     - [ ] Subtask: Test active state handling.
-- [~] Task: Conductor - User Manual Verification 'Phase 3: Core Component Testing' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 3: Core Component Testing' (Protocol in workflow.md)
 
 ## Phase 4: Screen Component Testing
 - [ ] Task: Implement tests for `src/components/screens/AboutScreen.tsx`.
