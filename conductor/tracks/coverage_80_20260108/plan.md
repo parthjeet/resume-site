@@ -1,7 +1,7 @@
 # Plan: Increase Test Coverage to >80%
 
 ## Phase 1: Infrastructure and Utility Testing
-- [ ] Task: Verify and configure Vitest coverage reporting.
+- [x] Task: Verify and configure Vitest coverage reporting. [commit: d86261a]
     - [ ] Subtask: Check `vitest.config.ts` for coverage settings (v8 or istanbul).
     - [ ] Subtask: Ensure a coverage script exists in `package.json` (e.g., `vitest run --coverage`).
     - [ ] Subtask: Run initial coverage to confirm the baseline.
