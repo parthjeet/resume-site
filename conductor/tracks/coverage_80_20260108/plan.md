@@ -26,7 +26,7 @@
     - [ ] Subtask: Test rendering and animation completion callbacks.
 - [x] Task: Implement tests for `src/components/WindowContainer.tsx`. [commit: 2a8af83]
     - [ ] Subtask: Test window rendering, title bar, and children projection.
-- [ ] Task: Implement tests for `src/components/Taskbar.tsx`.
+- [x] Task: Implement tests for `src/components/Taskbar.tsx`. [commit: 71a801c]
     - [ ] Subtask: Test button rendering and click interactions.
     - [ ] Subtask: Test active state handling.
 - [ ] Task: Conductor - User Manual Verification 'Phase 3: Core Component Testing' (Protocol in workflow.md)
