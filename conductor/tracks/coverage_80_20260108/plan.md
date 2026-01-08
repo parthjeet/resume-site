@@ -11,7 +11,7 @@
     - [ ] Subtask: Write unit tests for animation constants or helper functions.
 - [ ] Task: Conductor - User Manual Verification 'Phase 1: Infrastructure and Utility Testing' (Protocol in workflow.md)
 
-## Phase 2: Hook Testing
+## Phase 2: Hook Testing [checkpoint: 0be15b1]
 - [x] Task: Implement tests for `src/hooks/useScreenNavigation.ts`. [commit: f86318b]
     - [ ] Subtask: Test navigation state transitions.
     - [ ] Subtask: Test screen ID validation.
