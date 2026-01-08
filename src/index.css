@@ -1,0 +1,580 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+ * Portfolio Design System
+ * Professional Retro-Tech Fusion - Windows 95 Aesthetic
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Playfair+Display:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* === PRIMARY PALETTE === */
+    --background: 240 28% 14%; /* #1a1a2e - Deep charcoal base */
+    --background-primary: 240 28% 14%;
+    --background-secondary: 40 33% 93%; /* #f5f0e6 - Cream content panels */
+    --surface: 45 33% 97%; /* #faf8f3 - Card surfaces */
+    
+    --foreground: 240 14% 20%; /* #2d2d3a - Primary text on light */
+    
+    /* === ACCENT COLORS === */
+    --accent-primary: 30 50% 64%; /* #d4a574 - Muted amber/gold */
+    --accent-secondary: 345 34% 41%; /* #8b4557 - Soft burgundy */
+    --accent-tertiary: 37 44% 64%; /* #c9a87c - Tertiary amber */
+    
+    /* === TEXT COLORS === */
+    --text-primary: 240 14% 20%; /* #2d2d3a */
+    --text-secondary: 240 8% 38%; /* #5a5a6a */
+    --text-light: 40 17% 90%; /* #e8e4dc */
+    --text-accent: 345 34% 41%; /* #8b4557 */
+    
+    /* === UI ELEMENT COLORS === */
+    --border-light: 0 0% 100% / 0.2;
+    --border-shadow: 0 0% 0% / 0.3;
+    --border-card: 40 20% 86%; /* #e5e0d5 */
+    --window-title: 345 34% 41%; /* #8b4557 */
+    --window-title-light: 345 28% 52%; /* #a05a6a */
+    --timeline: 30 50% 64%; /* #d4a574 */
+    --timeline-dot: 37 44% 64%; /* #c9a87c */
+    
+    /* === TAG/BADGE COLORS === */
+    --tag-background: 0 0% 100%;
+    --tag-border: 40 20% 86%;
+    --tag-text: 240 8% 38%;
+    --tag-icon: 345 34% 41%;
+    
+    /* === TASKBAR === */
+    --taskbar-bg: 240 28% 14%;
+    --taskbar-text: 0 0% 69%; /* #b0b0b0 */
+    --taskbar-active: 240 14% 26%; /* #2d2d3a */
+    --taskbar-divider: 240 10% 25%; /* #3d3d4d */
+    
+    /* === SHADOWS === */
+    --shadow-sm: 0 1px 2px hsl(0 0% 0% / 0.05);
+    --shadow-md: 0 4px 12px hsl(0 0% 0% / 0.08);
+    --shadow-lg: 0 8px 24px hsl(0 0% 0% / 0.12);
+    --shadow-window: 0 12px 40px hsl(0 0% 0% / 0.2);
+    --shadow-inset: inset 0 1px 0 hsl(0 0% 100% / 0.1);
+    
+    /* === SPACING === */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 24px;
+    --space-6: 32px;
+    --space-7: 48px;
+    --space-8: 64px;
+    --space-9: 96px;
+    
+    /* === BORDER RADIUS === */
+    --radius: 0.5rem;
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    
+    /* === ANIMATION DURATIONS === */
+    --duration-instant: 0ms;
+    --duration-fast: 100ms;
+    --duration-normal: 150ms;
+    --duration-moderate: 200ms;
+    --duration-slow: 300ms;
+    --duration-slower: 400ms;
+    --duration-slowest: 600ms;
+    
+    /* === EASING FUNCTIONS === */
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --ease-in: cubic-bezier(0.4, 0, 1, 1);
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+    
+    /* === SHADCN TOKENS MAPPING === */
+    --card: 45 33% 97%;
+    --card-foreground: 240 14% 20%;
+    --popover: 45 33% 97%;
+    --popover-foreground: 240 14% 20%;
+    --primary: 30 50% 64%;
+    --primary-foreground: 240 14% 20%;
+    --secondary: 40 33% 93%;
+    --secondary-foreground: 240 14% 20%;
+    --muted: 40 20% 86%;
+    --muted-foreground: 240 8% 38%;
+    --accent: 345 34% 41%;
+    --accent-foreground: 40 17% 90%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 40 20% 86%;
+    --input: 40 20% 86%;
+    --ring: 30 50% 64%;
+    
+    /* Sidebar - for reference */
+    --sidebar-background: 240 28% 14%;
+    --sidebar-foreground: 40 17% 90%;
+    --sidebar-primary: 30 50% 64%;
+    --sidebar-primary-foreground: 240 14% 20%;
+    --sidebar-accent: 345 34% 41%;
+    --sidebar-accent-foreground: 40 17% 90%;
+    --sidebar-border: 240 10% 25%;
+    --sidebar-ring: 30 50% 64%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    overflow: hidden;
+  }
+}
+
+@layer components {
+  /* Window Title Bar */
+  .window-title-bar {
+    @apply h-12 px-5 flex items-center justify-between;
+    background: linear-gradient(90deg, hsl(345 28% 52%) 0%, hsl(345 34% 41%) 100%);
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  }
+  
+  .window-title-text {
+    @apply font-mono text-sm font-semibold uppercase tracking-wider;
+    color: hsl(var(--text-light));
+  }
+  
+  .window-control-dot {
+    @apply w-2 h-2 rounded-full;
+  }
+  
+  .window-control-dot-amber {
+    background: hsl(var(--timeline-dot));
+  }
+  
+  .window-control-dot-gold {
+    background: hsl(var(--accent-primary));
+  }
+  
+  /* Window Content Panel */
+  .window-content {
+    @apply p-10 overflow-y-auto;
+    background: hsl(var(--background-secondary));
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  }
+  
+  /* Cards */
+  .content-card {
+    @apply relative bg-white rounded-lg p-6;
+    border: 1px solid hsl(var(--border-card));
+    box-shadow: var(--shadow-md);
+  }
+  
+  .content-card-accent {
+    @apply content-card;
+    border-left: 4px solid hsl(var(--timeline-dot));
+  }
+  
+  /* Project Card with mini title bar */
+  .project-card {
+    @apply bg-white rounded-lg overflow-hidden;
+    border: 1px solid hsl(var(--border-card));
+    box-shadow: var(--shadow-md);
+    transition: all var(--duration-moderate) var(--ease-out);
+  }
+  
+  .project-card:hover {
+    box-shadow: var(--shadow-lg);
+    border-color: hsl(var(--accent-primary));
+  }
+  
+  .project-card-header {
+    @apply h-8 px-4 flex items-center justify-between;
+    background: hsl(var(--window-title));
+  }
+  
+  .project-card-header-text {
+    @apply font-mono text-xs font-medium text-white;
+  }
+  
+  /* Address Bar (File Explorer Style) */
+  .address-bar {
+    @apply h-10 px-4 flex items-center gap-3 bg-white rounded;
+    border: 1px solid hsl(var(--border-card));
+  }
+  
+  .address-bar-path {
+    @apply font-mono text-sm flex-1;
+    color: hsl(var(--text-secondary));
+  }
+  
+  /* Tags */
+  .skill-tag {
+    @apply inline-flex items-center gap-2 px-3 py-2 bg-white rounded text-sm;
+    border: 1px solid hsl(var(--border-card));
+    color: hsl(var(--text-secondary));
+    transition: background var(--duration-normal) var(--ease-out);
+  }
+  
+  .skill-tag:hover {
+    background: hsl(var(--background-secondary));
+  }
+  
+  .skill-tag-icon {
+    color: hsl(var(--accent-secondary));
+  }
+  
+  .tech-tag {
+    @apply inline-flex items-center px-2.5 py-1.5 rounded text-xs font-medium;
+    background: hsl(var(--background-secondary));
+    border: 1px solid hsl(var(--border-card));
+    color: hsl(var(--text-secondary));
+  }
+  
+  .date-badge {
+    @apply inline-flex items-center px-3 py-1.5 rounded text-sm;
+    background: hsl(var(--background-secondary));
+    border: 1px solid hsl(var(--border-card));
+    color: hsl(var(--text-primary));
+  }
+  
+  /* Role Badge */
+  .role-badge {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded text-sm font-medium uppercase tracking-wide;
+    border: 1px solid hsl(var(--border-card));
+    color: hsl(var(--text-secondary));
+    background: hsl(var(--surface));
+  }
+  
+  .role-badge-icon {
+    color: hsl(var(--accent-secondary));
+  }
+  
+  /* Buttons */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md text-base font-semibold;
+    background: hsl(var(--accent-primary));
+    color: hsl(var(--text-primary));
+    box-shadow: 0 2px 4px hsl(0 0% 0% / 0.1);
+    transition: all var(--duration-normal) var(--ease-out);
+  }
+  
+  .btn-primary:hover {
+    filter: brightness(0.9);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px hsl(0 0% 0% / 0.15);
+  }
+  
+  .btn-primary:active {
+    transform: scale(0.97);
+  }
+  
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded text-sm font-medium;
+    background: hsl(var(--text-primary));
+    color: white;
+    transition: all var(--duration-normal) var(--ease-out);
+  }
+  
+  .btn-secondary:hover {
+    filter: brightness(1.1);
+    border-color: hsl(var(--accent-primary));
+  }
+  
+  .btn-secondary:active {
+    transform: scale(0.97);
+  }
+  
+  /* Taskbar */
+  .taskbar {
+    @apply fixed bottom-0 left-0 right-0 h-12 flex items-center justify-between px-4 z-50;
+    background: hsl(var(--taskbar-bg));
+  }
+  
+  .taskbar-start {
+    @apply flex items-center gap-2 px-4 py-2 rounded text-sm font-semibold text-white;
+    background: hsl(var(--accent-secondary));
+    transition: all var(--duration-normal) var(--ease-out);
+  }
+  
+  .taskbar-start:hover {
+    filter: brightness(1.1);
+  }
+  
+  .taskbar-start:active {
+    transform: scale(0.97);
+  }
+  
+  .taskbar-nav-btn {
+    @apply px-4 py-2 rounded text-sm font-medium;
+    color: hsl(var(--taskbar-text));
+    background: transparent;
+    transition: all var(--duration-normal) var(--ease-out);
+  }
+  
+  .taskbar-nav-btn:hover {
+    background: hsl(var(--taskbar-active) / 0.5);
+    color: hsl(var(--text-light));
+  }
+  
+  .taskbar-nav-btn.active {
+    background: hsl(var(--taskbar-active));
+    color: hsl(var(--accent-primary));
+    border-bottom: 2px solid hsl(var(--accent-primary));
+  }
+  
+  .taskbar-divider {
+    @apply w-px h-6;
+    background: hsl(var(--taskbar-divider));
+  }
+  
+  .taskbar-icon {
+    @apply w-10 h-10 flex items-center justify-center rounded;
+    color: hsl(var(--taskbar-text));
+    transition: all var(--duration-normal) var(--ease-out);
+  }
+  
+  .taskbar-icon:hover {
+    color: hsl(var(--accent-primary));
+    transform: scale(1.1);
+  }
+  
+  .taskbar-clock {
+    @apply text-sm font-medium;
+    color: hsl(var(--taskbar-text));
+  }
+  
+  /* Timeline */
+  .timeline-line {
+    @apply absolute w-0.5;
+    background: hsl(var(--timeline));
+  }
+  
+  .timeline-dot {
+    @apply absolute w-3 h-3 rounded-full border-2 border-white;
+    background: hsl(var(--timeline-dot));
+    box-shadow: 0 0 0 3px hsl(var(--background-secondary));
+  }
+  
+  /* Section Title */
+  .section-title {
+    @apply text-5xl font-bold mb-4;
+    font-family: 'Playfair Display', Georgia, serif;
+    color: hsl(var(--text-primary));
+  }
+  
+  .section-title-underline {
+    @apply w-16 h-0.5;
+    background: hsl(var(--timeline-dot));
+  }
+  
+  /* Hero Typography */
+  .hero-display {
+    @apply text-7xl font-normal leading-none tracking-tight;
+    font-family: 'Playfair Display', Georgia, serif;
+    color: hsl(var(--text-primary));
+  }
+  
+  .hero-display-accent {
+    @apply text-7xl font-normal leading-none tracking-tight;
+    font-family: 'Playfair Display', Georgia, serif;
+    color: hsl(var(--accent-secondary));
+  }
+  
+  /* Terminal Overlay */
+  .terminal-overlay {
+    @apply absolute bottom-0 left-0 right-0 p-4 font-mono text-sm;
+    background: hsl(0 0% 0% / 0.75);
+  }
+  
+  .terminal-line {
+    @apply text-emerald-400;
+  }
+  
+  .terminal-prompt {
+    @apply text-emerald-400;
+  }
+  
+  /* Company Name Styling */
+  .company-name {
+    @apply text-base font-medium uppercase tracking-wide;
+    color: hsl(var(--accent-secondary));
+  }
+  
+  /* Certification Card */
+  .cert-card {
+    @apply flex items-start gap-4 p-4 bg-white rounded-lg;
+    border: 1px solid hsl(var(--border-card));
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .cert-icon-wrapper {
+    @apply w-12 h-12 flex items-center justify-center rounded-lg;
+    background: hsl(var(--background-secondary));
+    color: hsl(var(--accent-secondary));
+  }
+  
+  /* Contact Card */
+  .contact-card {
+    @apply flex flex-col items-center justify-center gap-4 p-6 bg-white rounded-xl w-52 h-44;
+    border: 1px solid hsl(var(--border-card));
+    box-shadow: var(--shadow-lg);
+    transition: all var(--duration-moderate) var(--ease-out);
+  }
+  
+  .contact-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-window);
+    border-color: hsl(var(--accent-primary));
+  }
+  
+  .contact-card-icon {
+    @apply w-12 h-12;
+    color: hsl(var(--accent-secondary));
+  }
+  
+  .contact-card-label {
+    @apply text-lg font-semibold;
+    color: hsl(var(--text-primary));
+  }
+  
+  .contact-card-cta {
+    @apply text-sm font-medium flex items-center gap-1;
+    color: hsl(var(--accent-primary));
+  }
+  
+  /* Category Panel */
+  .category-panel {
+    @apply bg-white rounded-lg p-6;
+    border: 1px solid hsl(var(--border-card));
+    box-shadow: var(--shadow-md);
+  }
+  
+  .category-header {
+    @apply flex items-center gap-3 mb-4 text-base font-semibold uppercase tracking-wide;
+    color: hsl(var(--text-primary));
+  }
+  
+  .category-icon {
+    color: hsl(var(--accent-secondary));
+  }
+}
+
+@layer utilities {
+  /* Animation utilities */
+  .animate-fade-in {
+    animation: fadeIn var(--duration-slow) var(--ease-out) forwards;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp var(--duration-slow) var(--ease-out) forwards;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn var(--duration-slow) var(--ease-out) forwards;
+  }
+  
+  .animate-flicker {
+    animation: flicker 350ms steps(1) forwards;
+  }
+  
+  .animate-timeline-draw {
+    animation: timelineDraw var(--duration-slowest) var(--ease-out) forwards;
+  }
+  
+  .animate-dot-pop {
+    animation: dotPop var(--duration-slow) var(--ease-bounce) forwards;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes flicker {
+  0% { opacity: 1; }
+  14% { opacity: 0.3; }
+  28% { opacity: 1; }
+  42% { opacity: 0.5; }
+  56% { opacity: 0.5; }
+  70% { opacity: 1; }
+  85% { opacity: 0.8; }
+  100% { opacity: 1; }
+}
+
+@keyframes timelineDraw {
+  from {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  to {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+}
+
+@keyframes dotPop {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes biosFlash {
+  0% { opacity: 0; }
+  40% { opacity: 0.8; }
+  100% { opacity: 0; }
+}
+
+@keyframes bootTextFade {
+  0% { opacity: 0; }
+  30% { opacity: 1; }
+  70% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
