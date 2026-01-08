@@ -21,6 +21,13 @@ All tasks follow a strict lifecycle:
 
 3. **Create GitHub Issue:**
    -   **Step 3.1: Draft Issue:** Create a comprehensive description for the task.
+       -   **Must Include:**
+           -   **Description:** High-level goal.
+           -   **Implementation Steps:**
+               -   **Analyze Context:** Explicitly list files to read (e.g., source code, data files, existing tests) to understand the system.
+               -   **Develop Tests/Code:** Detailed breakdown of specific test cases or features to implement.
+               -   **Verify & Refine:** Exact commands to run tests and check coverage (e.g., `npm run test -- <file>`, `npx vitest run --coverage`).
+           -   **Acceptance Criteria:** Clear definition of done (coverage %, passing tests, etc.).
    -   **Step 3.2: Get Approval:** Present the issue title and body to the user for approval.
    -   **Step 3.3: Create Issue:** Once approved, use `gh issue create` to create the issue.
        ```bash
