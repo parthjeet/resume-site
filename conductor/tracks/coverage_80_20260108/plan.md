@@ -5,7 +5,7 @@
     - [ ] Subtask: Check `vitest.config.ts` for coverage settings (v8 or istanbul).
     - [ ] Subtask: Ensure a coverage script exists in `package.json` (e.g., `vitest run --coverage`).
     - [ ] Subtask: Run initial coverage to confirm the baseline.
-- [ ] Task: Implement tests for `src/lib/utils.ts`.
+- [x] Task: Implement tests for `src/lib/utils.ts`. [commit: 08e03d7]
     - [ ] Subtask: Write unit tests for `cn` and other utility functions.
 - [ ] Task: Implement tests for `src/lib/animations.ts`.
     - [ ] Subtask: Write unit tests for animation constants or helper functions.
