@@ -7,7 +7,7 @@
     - [ ] Subtask: Run initial coverage to confirm the baseline.
 - [x] Task: Implement tests for `src/lib/utils.ts`. [commit: 08e03d7]
     - [ ] Subtask: Write unit tests for `cn` and other utility functions.
-- [ ] Task: Implement tests for `src/lib/animations.ts`.
+- [x] Task: Implement tests for `src/lib/animations.ts`. [commit: 29d6a76]
     - [ ] Subtask: Write unit tests for animation constants or helper functions.
 - [ ] Task: Conductor - User Manual Verification 'Phase 1: Infrastructure and Utility Testing' (Protocol in workflow.md)
 
