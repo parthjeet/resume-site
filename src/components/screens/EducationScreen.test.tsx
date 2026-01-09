@@ -32,7 +32,11 @@ describe('EducationScreen', () => {
     });
 
     it('should render the correct number of education entries', () => {
-      const educationItems = screen.getAllByRole('heading', { level: 3 });
+      const academicHistoryHeading = screen.getByRole('heading', { name: /academic history/i });
+      const academicHistorySection = academicHistoryHeading.closest('section');
+      expect(academicHistorySection).not.toBeNull();
+      const { getAllByRole } = within(academicHistorySection!);
+      const educationItems = getAllByRole('heading', { level: 3 });
       expect(educationItems).toHaveLength(education.length);
     });
 
