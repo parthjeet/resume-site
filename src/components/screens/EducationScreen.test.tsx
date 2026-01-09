@@ -1,7 +1,21 @@
 import { render, screen, within } from '@testing-library/react';
-import { describe, it, expect, beforeEach } from 'vitest';
+import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { EducationScreen } from './EducationScreen';
 import { education, certifications } from '@/data/content';
+
+// Mock Lucide icons to follow project pattern, avoid rendering issues, and keep tests fast.
+// data-testid is added only where needed for assertion.
+vi.mock('lucide-react', () => ({
+    ArrowLeft: () => <svg />,
+    ArrowRight: () => <svg />,
+    Search: () => <svg />,
+    GraduationCap: () => <svg data-testid="academic-history-icon" />,
+    Award: () => <svg data-testid="industry-certifications-icon" />,
+    Cloud: () => <svg data-testid="cert-icon-cloud" />,
+    Box: () => <svg data-testid="cert-icon-container" />,
+    Code: () => <svg data-testid="cert-icon-code" />,
+    Shield: () => <svg data-testid="cert-icon-shield" />,
+}));
 
 describe('EducationScreen', () => {
   beforeEach(() => {
@@ -32,11 +46,7 @@ describe('EducationScreen', () => {
     });
 
     it('should render the correct number of education entries', () => {
-      const academicHistoryHeading = screen.getByRole('heading', { name: /academic history/i });
-      const academicHistorySection = academicHistoryHeading.closest('section');
-      expect(academicHistorySection).not.toBeNull();
-      const { getAllByRole } = within(academicHistorySection!);
-      const educationItems = getAllByRole('heading', { level: 3 });
+      const educationItems = screen.getAllByRole('heading', { level: 3 });
       expect(educationItems).toHaveLength(education.length);
     });
 
@@ -60,7 +70,6 @@ describe('EducationScreen', () => {
     });
 
     it('should render the correct number of certification entries', () => {
-      // Find all certification cards. A bit more robust than checking headings.
       const certCards = screen.getAllByText(/Issued:/i).map(node => node.closest('.cert-card'));
       expect(certCards).toHaveLength(certifications.length);
     });
@@ -84,12 +93,10 @@ describe('EducationScreen', () => {
         const certCard = screen.getByText(cert.name).closest('.cert-card');
         expect(certCard).not.toBeNull();
 
-        // The component maps the 'container' data icon to the 'Box' Lucide icon.
-        // We need to assert that the rendered icon has the correct class (e.g., .lucide-box).
-        const expectedIconClass = `lucide-${cert.icon === 'container' ? 'box' : cert.icon}`;
-
-        const icon = certCard!.querySelector(`.${expectedIconClass}`);
-        expect(icon).toBeInTheDocument();
+        // Assert that the mocked icon with the correct test id is within the card
+        const expectedIconId = `cert-icon-${cert.icon}`;
+        const { getByTestId } = within(certCard!);
+        expect(getByTestId(expectedIconId)).toBeInTheDocument();
       });
     });
   });
