@@ -126,6 +126,29 @@ Components are installed to `src/components/ui/`. Do not manually create files t
 
 ---
 
+## Comprehensive Documentation (`docs/` folder)
+
+The `docs/` folder contains 7 comprehensive documents (~304 KB total). Consult `docs/_INDEX.md` for full navigation.
+
+| Document | When to Use |
+|----------|-------------|
+| `OVERVIEW.md` | Quick project introduction and structure |
+| `ARCHITECTURE.md` | System design, patterns, data flow, component hierarchy |
+| `COMPONENTS.md` | Component APIs, props reference, creating new components |
+| `UI-PATTERNS.md` | shadcn/ui usage, styling with Tailwind, theming, `cn()` utility |
+| `STATE-MANAGEMENT.md` | Navigation hook, state debugging, why no Redux |
+| `DATA-MODELS.md` | Data structures, TypeScript types, updating content |
+| `DEVELOPMENT.md` | Setup, coding standards, troubleshooting, contributing |
+
+### When to Reference Docs
+
+- **Adding a new screen**: See `COMPONENTS.md` → Extensibility and `DATA-MODELS.md` → Adding New Data
+- **Debugging navigation**: See `STATE-MANAGEMENT.md` → State Debugging
+- **Understanding animations**: See `ARCHITECTURE.md` → Animation System
+- **Customizing theme**: See `UI-PATTERNS.md` → Theme Customization
+
+---
+
 ## Trust These Instructions
 
-These instructions have been validated by running all commands. Only search the codebase if information here is incomplete or found to be incorrect.
+These instructions have been validated by running all commands. Refer to `docs/` for detailed technical information. Only search the codebase if information here is incomplete or found to be incorrect.
