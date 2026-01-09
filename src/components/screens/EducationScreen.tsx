@@ -77,7 +77,7 @@ export function EducationScreen() {
       {/* Industry Certifications Section */}
       <motion.div variants={fadeSlideUp}>
         <div className="flex items-center gap-3 mb-6">
-          <Award className="w-6 h-6 text-burgundy" data-testid="industry-certifications-icon" />
+          <Award className="w-6 h-6 text-burgundy" />
           <h2 className="text-2xl font-bold text-text-primary">Industry Certifications</h2>
         </div>
 
