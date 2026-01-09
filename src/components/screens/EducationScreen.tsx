@@ -39,7 +39,7 @@ export function EducationScreen() {
       {/* Academic History Section */}
       <motion.div variants={fadeSlideUp} className="mb-10">
         <div className="flex items-center gap-3 mb-6">
-          <GraduationCap className="w-6 h-6 text-burgundy" />
+          <GraduationCap className="w-6 h-6 text-burgundy" data-testid="academic-history-icon" />
           <h2 className="text-2xl font-bold text-text-primary">Academic History</h2>
         </div>
 
@@ -77,7 +77,7 @@ export function EducationScreen() {
       {/* Industry Certifications Section */}
       <motion.div variants={fadeSlideUp}>
         <div className="flex items-center gap-3 mb-6">
-          <Award className="w-6 h-6 text-burgundy" />
+          <Award className="w-6 h-6 text-burgundy" data-testid="industry-certifications-icon" />
           <h2 className="text-2xl font-bold text-text-primary">Industry Certifications</h2>
         </div>
 
