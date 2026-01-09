@@ -1,5 +1,5 @@
 import { render, screen, within } from '@testing-library/react';
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, beforeEach } from 'vitest';
 import { EducationScreen } from './EducationScreen';
 import { education, certifications } from '@/data/content';
 
