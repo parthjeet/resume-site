@@ -1,5 +1,30 @@
 # Copilot Coding Agent Instructions
 
+## Comprehensive Documentation (`docs/` folder)
+
+The `docs/` folder contains 7 comprehensive documents (~304 KB total). Consult `docs/_INDEX.md` for full navigation.
+
+| Document | When to Use |
+|----------|-------------|
+| `OVERVIEW.md` | Quick project introduction and structure |
+| `ARCHITECTURE.md` | System design, patterns, data flow, component hierarchy |
+| `COMPONENTS.md` | Component APIs, props reference, creating new components |
+| `UI-PATTERNS.md` | shadcn/ui usage, styling with Tailwind, theming, `cn()` utility |
+| `STATE-MANAGEMENT.md` | Navigation hook, state debugging, why no Redux |
+| `DATA-MODELS.md` | Data structures, TypeScript types, updating content |
+| `DEVELOPMENT.md` | Setup, coding standards, troubleshooting, contributing |
+
+### When to Reference Docs
+
+- **ALWAYs**: Read `docs/_INDEX.md` for full navigation.
+- **ALWAYS**:  Read `docs/OVERVIEW.md` for full navigation.
+- **Adding a new screen**: See `COMPONENTS.md` → Extensibility and `DATA-MODELS.md` → Adding New Data
+- **Debugging navigation**: See `STATE-MANAGEMENT.md` → State Debugging
+- **Understanding animations**: See `ARCHITECTURE.md` → Animation System
+- **Customizing theme**: See `UI-PATTERNS.md` → Theme Customization
+
+---
+
 ## Repository Overview
 
 **MyRes Site** is a portfolio/resume web application with a desktop OS-inspired interface featuring boot sequences, windowed UI components, and taskbar navigation.
@@ -35,33 +60,6 @@
 3. **Always run tests with `npm run test:run`** (not `npm run test` which runs in watch mode).
 
 ---
-
-## Project Structure
-
-```
-/
-├── src/
-│   ├── components/
-│   │   ├── ui/              # shadcn/ui components (DO NOT manually edit)
-│   │   ├── screens/         # Portfolio screens (AboutScreen, ExperienceScreen, etc.)
-│   │   ├── BootSequence.tsx # Boot animation
-│   │   ├── WindowContainer.tsx
-│   │   └── Taskbar.tsx
-│   ├── hooks/               # Custom React hooks (useScreenNavigation, use-mobile)
-│   ├── lib/                 # Utilities (utils.ts, animations.ts)
-│   ├── data/content.ts      # All portfolio content data
-│   ├── pages/               # Route components (Index.tsx, NotFound.tsx)
-│   ├── test/setup.ts        # Vitest setup
-│   ├── App.tsx              # Root component
-│   └── main.tsx             # Entry point
-├── .github/workflows/deploy.yml  # Cloudflare Pages deployment
-├── vite.config.ts           # Vite configuration
-├── vitest.config.ts         # Test configuration
-├── tsconfig.json            # TypeScript config
-├── tailwind.config.ts       # Tailwind CSS config
-├── eslint.config.js         # ESLint config
-└── components.json          # shadcn/ui config
-```
 
 ### Key Files for Common Tasks
 
@@ -124,28 +122,6 @@ Components are installed to `src/components/ui/`. Do not manually create files t
 | Lint errors in ui/ files | These are pre-existing in shadcn files; ignore them |
 | CSS @import warning | Non-blocking; can be ignored |
 
----
-
-## Comprehensive Documentation (`docs/` folder)
-
-The `docs/` folder contains 7 comprehensive documents (~304 KB total). Consult `docs/_INDEX.md` for full navigation.
-
-| Document | When to Use |
-|----------|-------------|
-| `OVERVIEW.md` | Quick project introduction and structure |
-| `ARCHITECTURE.md` | System design, patterns, data flow, component hierarchy |
-| `COMPONENTS.md` | Component APIs, props reference, creating new components |
-| `UI-PATTERNS.md` | shadcn/ui usage, styling with Tailwind, theming, `cn()` utility |
-| `STATE-MANAGEMENT.md` | Navigation hook, state debugging, why no Redux |
-| `DATA-MODELS.md` | Data structures, TypeScript types, updating content |
-| `DEVELOPMENT.md` | Setup, coding standards, troubleshooting, contributing |
-
-### When to Reference Docs
-
-- **Adding a new screen**: See `COMPONENTS.md` → Extensibility and `DATA-MODELS.md` → Adding New Data
-- **Debugging navigation**: See `STATE-MANAGEMENT.md` → State Debugging
-- **Understanding animations**: See `ARCHITECTURE.md` → Animation System
-- **Customizing theme**: See `UI-PATTERNS.md` → Theme Customization
 
 ---
 
